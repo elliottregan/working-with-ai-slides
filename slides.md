@@ -93,7 +93,7 @@ layout: center
 
 # The Iterative Process
 
-<div class="text-sm" style="transform: scale(0.75); transform-origin: center;">
+<div class="text-sm">
 
 ```mermaid
 graph LR
