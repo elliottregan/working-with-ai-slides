@@ -22,8 +22,6 @@ layout: center
 
 # Executive Summary
 
-<v-clicks>
-
 - **Treat AI like a talented intern**: Knowledgeable about patterns, but needs guidance and review
 
 - **Start simple, iterate deliberately**: Break work into small steps, review after each change
@@ -33,8 +31,6 @@ layout: center
 - **Manage context strategically**: More examples = better output, but stay focused on one task
 
 - **Leverage existing patterns**: Point to working code to guide the AI in the right direction
-
-</v-clicks>
 
 <!--
 These five principles will guide your entire workflow with AI agents
@@ -48,8 +44,6 @@ layout: two-cols
 
 Think of the AI agent as...
 
-<v-clicks>
-
 **A very knowledgeable developer who has never actually coded before**
 
 - Knows common patterns and solutions
@@ -57,11 +51,7 @@ Think of the AI agent as...
 - Makes mistakes that need review
 - Can explain and explore ideas
 
-</v-clicks>
-
 ::right::
-
-<v-clicks>
 
 <div class="mt-12">
 
@@ -80,8 +70,6 @@ Think of the AI agent as...
 - Don't accept the first solution
 
 </div>
-
-</v-clicks>
 
 <!--
 These aren't optional - they're essential to working effectively with AI
@@ -123,8 +111,6 @@ This cycle is the foundation of effective AI-assisted development
 
 **Goal**: Set up the environment without doing too much at once
 
-<v-clicks>
-
 ## What to do
 
 - **Keep it simple**: Don't ask the agent to do too much initially
@@ -137,8 +123,6 @@ Asking the agent to do too much in the first step causes it to get off track qui
 
 If you're not sure exactly how to solve the problem, ideate in a separate conversation first.
 
-</v-clicks>
-
 <!--
 Think of this as scaffolding - you're building the frame before adding the details
 -->
@@ -146,8 +130,6 @@ Think of this as scaffolding - you're building the frame before adding the detai
 ---
 
 # After the First Prompt
-
-<v-clicks>
 
 ## Critical checkpoints
 
@@ -161,17 +143,11 @@ Think of this as scaffolding - you're building the frame before adding the detai
 - Fix any immediate compilation errors
 - Verify the structure is sound
 
-</v-clicks>
-
-<v-click>
-
 <div class="mt-8 p-4 bg-yellow-100 dark:bg-yellow-900 rounded">
 
 ⚠️ Never proceed to the next step if the code doesn't compile or you don't understand what was generated
 
 </div>
-
-</v-click>
 
 <!--
 This is your first quality gate - don't skip it
@@ -185,8 +161,6 @@ layout: two-cols
 
 **Goal**: Provide detailed requirements and guide the implementation
 
-<v-clicks>
-
 ## 1. Describe the problem in detail
 
 Explain what you're solving, then describe the solution you want to see:
@@ -194,11 +168,7 @@ Explain what you're solving, then describe the solution you want to see:
 - What services should do
 - Expected behavior and output
 
-</v-clicks>
-
 ::right::
-
-<v-clicks>
 
 <div class="mt-12">
 
@@ -211,8 +181,6 @@ Explain what you're solving, then describe the solution you want to see:
 
 </div>
 
-</v-clicks>
-
 <!--
 This is where you leverage context to get better results
 -->
@@ -220,8 +188,6 @@ This is where you leverage context to get better results
 ---
 
 # Second Prompt (continued)
-
-<v-clicks>
 
 ## 3. Roll the dice
 
@@ -246,8 +212,6 @@ for service structure and error handling.
 
 </div>
 
-</v-clicks>
-
 <!--
 Be specific about what you want and what patterns to follow
 -->
@@ -257,8 +221,6 @@ layout: two-cols
 ---
 
 # After the Second Prompt
-
-<v-clicks>
 
 ## 1. Review the code in detail
 
@@ -273,11 +235,7 @@ Run the build again
 - Fix any new compilation errors
 - Test the functionality
 
-</v-clicks>
-
 ::right::
-
-<v-clicks>
 
 <div class="mt-12">
 
@@ -292,8 +250,6 @@ Don't stop at working code - make it better
 
 </div>
 
-</v-clicks>
-
 <!--
 This is your second quality gate and the start of refinement
 -->
@@ -303,8 +259,6 @@ layout: two-cols
 ---
 
 # Handling Errors
-
-<v-clicks>
 
 ## The simple approach
 
@@ -318,11 +272,7 @@ The agent can often resolve them directly
 - Stack traces
 - Runtime vs compilation errors
 
-</v-clicks>
-
 ::right::
-
-<v-click>
 
 <div class="mt-12">
 
@@ -347,8 +297,6 @@ from the API call but it's undefined.
 
 </div>
 
-</v-click>
-
 <!--
 Error handling with AI is surprisingly effective when you provide good context
 -->
@@ -356,8 +304,6 @@ Error handling with AI is surprisingly effective when you provide good context
 ---
 
 # Context Management
-
-<v-clicks>
 
 ## More examples = better output
 
@@ -373,17 +319,11 @@ Error handling with AI is surprisingly effective when you provide good context
 - Start a new session when switching topics
 - Don't let context become cluttered with unrelated code
 
-</v-clicks>
-
-<v-click>
-
 <div class="mt-8 p-4 bg-blue-100 dark:bg-blue-900 rounded">
 
 💡 Think of context like RAM - more is better, but only if it's relevant to the current task
 
 </div>
-
-</v-click>
 
 <!--
 Balance is key - enough context to guide, not so much to confuse
@@ -392,8 +332,6 @@ Balance is key - enough context to guide, not so much to confuse
 ---
 
 # Refinement Strategies
-
-<v-clicks>
 
 ## The DRY Problem
 
@@ -408,10 +346,6 @@ This leads to code duplication
 - **Request utility methods**: "Extract this logic to a utility"
 - **Enforce patterns**: "This duplicates code in X, please reuse that instead"
 
-</v-clicks>
-
-<v-click>
-
 <div class="mt-6">
 
 ### Example refinement prompt
@@ -423,8 +357,6 @@ and replace all instances with calls to that function?
 ```
 
 </div>
-
-</v-click>
 
 <!--
 Refinement is where good code becomes great code
@@ -439,8 +371,6 @@ class: text-center
 
 <div class="text-left max-w-3xl mx-auto">
 
-<v-clicks>
-
 1. **Start simple** - Lay groundwork first, implement details second
 
 2. **Always review and compile** - After every step, verify the code
@@ -452,8 +382,6 @@ class: text-center
 5. **Refine iteratively** - Don't accept the first solution, push for clean DRY code
 
 6. **Treat AI as a collaborator** - Review its work like you would a teammate's code
-
-</v-clicks>
 
 </div>
 
@@ -470,8 +398,6 @@ These practices will help you work effectively with AI agents from day one
 **Goal**: Create a device list page and equipment list page demonstrating the iterative workflow
 
 </div>
-
-<v-clicks>
 
 ### First Prompt: Lay the Groundwork
 ```markdown
@@ -491,13 +417,9 @@ EquipmentListComponent should show equipment with status badges
 - Each row should link to /equipment/:id for details
 ```
 
-</v-clicks>
-
 ---
 
 # Demo: Review & Refine
-
-<v-clicks>
 
 ### After implementation, review and refine:
 
@@ -515,8 +437,6 @@ Move this to src/app/components/status-badge/status-badge.component.ts and reuse
 
 ### Result
 Two clean, well-structured pages following existing patterns, with proper error handling and DRY code.
-
-</v-clicks>
 
 <!--
 This demo shows the complete workflow in action
