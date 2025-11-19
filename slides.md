@@ -439,6 +439,9 @@ EquipmentListComponent should show equipment with status badges
 ```markdown
 I see status badge rendering is duplicated in DeviceListComponent and EquipmentListComponent.
 Move this to src/app/components/status-badge/status-badge.component.ts and reuse it.
+
+These two pages share a common layout. Create a shared layout component
+at src/app/layouts/list-page-layout/list-page-layout.component.ts and reuse it.
 ```
 
 **4. Iterate** - Simplify logic, improve naming, extract utilities
