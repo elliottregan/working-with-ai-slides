@@ -1,0 +1,15 @@
+{
+  "name": "working-with-ai-slides",
+  "type": "module",
+  "scripts": {
+    "dev": "slidev",
+    "build": "slidev build",
+    "export": "slidev export"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@slidev/cli": "^52.9.0",
+    "@slidev/theme-default": "^0.25.0",
+    "playwright-chromium": "^1.56.1"
+  }
+}
