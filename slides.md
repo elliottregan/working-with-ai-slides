@@ -93,15 +93,15 @@ layout: center
 
 # The Iterative Process
 
-<div class="text-sm" style="transform: scale(0.85); transform-origin: center;">
+<div class="text-sm" style="transform: scale(0.75); transform-origin: center;">
 
 ```mermaid
-graph TD
-    A[First Prompt: Lay Groundwork] --> B[Review Code + Ensure Compilation]
-    B --> C[Second Prompt: Describe Problem & Solution]
-    C --> D[Review Code + Ensure Compilation]
-    D --> E{Clean & DRY?}
-    E -->|No| F[Refine: Simplify & Restructure]
+graph LR
+    A[First Prompt:<br/>Lay Groundwork] --> B[Review Code +<br/>Ensure Compilation]
+    B --> C[Second Prompt:<br/>Describe Problem<br/>& Solution]
+    C --> D[Review Code +<br/>Ensure Compilation]
+    D --> E{Clean<br/>& DRY?}
+    E -->|No| F[Refine:<br/>Simplify &<br/>Restructure]
     F --> D
     E -->|Yes| G[Done]
 
