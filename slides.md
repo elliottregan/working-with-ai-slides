@@ -1,153 +1,453 @@
 ---
-# try also 'default' to start simple
 theme: default
-# random image from a curated Unsplash collection by Anthony
-# like them? see https://unsplash.com/collections/94734566/slidev
 background: https://cover.sli.dev
-# some information about your slides (markdown enabled)
-title: Welcome to Slidev
+title: Working with AI Agents in Code
 info: |
-  ## Slidev Starter Template
-  Presentation slides for developers.
-
-  Learn more at [Sli.dev](https://sli.dev)
-# apply unocss classes to the current slide
+  ## Working with AI Agents in Code
+  A practical guide for developers new to AI-assisted development
 class: text-center
-# https://sli.dev/features/drawing
 drawings:
   persist: false
-# slide transition: https://sli.dev/guide/animations.html#slide-transitions
 transition: slide-left
-# enable MDC Syntax: https://sli.dev/features/mdc
 mdc: true
-# take snapshot for each slide in the overview
-overviewSnapshots: true
 ---
 
-# Welcome to Slidev
+# Working with AI Agents in Code
 
-Presentation slides for developers
+A Practical Guide for Developers
 
-<div class="pt-12">
-  <span @click="$slidev.nav.next" class="px-2 py-1 rounded cursor-pointer" hover="bg-white bg-opacity-10">
-    Press Space for next page <carbon:arrow-right class="inline"/>
-  </span>
+---
+layout: center
+---
+
+# Executive Summary
+
+<v-clicks>
+
+- **Treat AI like a talented intern**: Knowledgeable about patterns, but needs guidance and review
+
+- **Start simple, iterate deliberately**: Break work into small steps, review after each change
+
+- **Always verify and refine**: Review code thoroughly, ensure it compiles, and iterate until clean
+
+- **Manage context strategically**: More examples = better output, but stay focused on one task
+
+- **Leverage existing patterns**: Point to working code to guide the AI in the right direction
+
+</v-clicks>
+
+<!--
+These five principles will guide your entire workflow with AI agents
+-->
+
+---
+layout: two-cols
+---
+
+# General Tips
+
+Think of the AI agent as...
+
+<v-clicks>
+
+**A very knowledgeable developer who has never actually coded before**
+
+- Knows common patterns and solutions
+- Needs context and examples
+- Makes mistakes that need review
+- Can explain and explore ideas
+
+</v-clicks>
+
+::right::
+
+<v-clicks>
+
+<div class="mt-12">
+
+## Key Practices
+
+**Always review the output**
+- Just like code reviews with humans
+- Understand what was written and why
+
+**Ask questions**
+- Modern LLMs are great at answering questions
+- Explore ideas before implementing
+
+**Always refine**
+- "Is there a simpler way to do this?"
+- Don't accept the first solution
+
 </div>
 
-<div class="abs-br m-6 flex gap-2">
-  <button @click="$slidev.nav.openInEditor()" title="Open in Editor" class="text-xl slidev-icon-btn opacity-50 !border-none !hover:text-white">
-    <carbon:edit />
-  </button>
-  <a href="https://github.com/slidevjs/slidev" target="_blank" alt="GitHub" title="Open in GitHub"
-    class="text-xl slidev-icon-btn opacity-50 !border-none !hover:text-white">
-    <carbon:logo-github />
-  </a>
-</div>
+</v-clicks>
 
 <!--
-The last comment block of each slide will be treated as slide notes. It will be visible and editable in Presenter Mode along with the slide. [Read more in the docs](https://sli.dev/guide/syntax.html#notes)
+These aren't optional - they're essential to working effectively with AI
 -->
 
 ---
-transition: fade-out
+layout: center
 ---
 
-# What is Slidev?
+# The Iterative Process
 
-Slidev is a slides maker and presenter designed for developers, consist of the following features
+<div class="text-lg">
 
-- 📝 **Text-based** - focus on the content with Markdown, and then style them later
-- 🎨 **Themeable** - theme can be shared and used with npm packages
-- 🧑‍💻 **Developer Friendly** - code highlighting, live coding with autocompletion
-- 🤹 **Interactive** - embedding Vue components to enhance your expressions
-- 🎥 **Recording** - built-in recording and camera view
-- 📤 **Portable** - export into PDF, PNGs, or even a hostable SPA
-- 🛠 **Hackable** - anything possible on a webpage
+```mermaid
+graph TD
+    A[First Prompt: Lay Groundwork] --> B[Review Code + Ensure Compilation]
+    B --> C[Second Prompt: Describe Problem & Solution]
+    C --> D[Review Code + Ensure Compilation]
+    D --> E{Clean & DRY?}
+    E -->|No| F[Refine: Simplify & Restructure]
+    F --> D
+    E -->|Yes| G[Done]
 
-<br>
-<br>
-
-Read more about [Why Slidev?](https://sli.dev/guide/why)
-
-<!--
-You can have `style` tag in markdown to override the style for the current page.
-Learn more: https://sli.dev/features/slide-scope-style
--->
-
-<style>
-h1 {
-  background-color: #2B90B6;
-  background-image: linear-gradient(45deg, #4EC5D4 10%, #146b8c 20%);
-  background-size: 100%;
-  -webkit-background-clip: text;
-  -moz-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  -moz-text-fill-color: transparent;
-}
-</style>
-
-<!--
-Here is another comment.
--->
-
----
-transition: slide-up
-level: 2
----
-
-# Navigation
-
-Hover on the bottom-left corner to see the navigation's controls panel, [learn more](https://sli.dev/guide/navigation.html)
-
-## Keyboard Shortcuts
-
-|     |     |
-| --- | --- |
-| <kbd>right</kbd> / <kbd>space</kbd>| next animation or slide |
-| <kbd>left</kbd>  / <kbd>shift</kbd><kbd>space</kbd> | previous animation or slide |
-| <kbd>up</kbd> | previous slide |
-| <kbd>down</kbd> | next slide |
-
-<!-- https://sli.dev/guide/animations.html#click-animation -->
-<img
-  v-click
-  class="absolute -bottom-9 -left-7 w-80 opacity-50"
-  src="https://sli.dev/assets/arrow-bottom-left.svg"
-  alt=""
-/>
-<p v-after class="absolute bottom-23 left-45 opacity-30 transform -rotate-10">Here!</p>
-
----
-layout: image-right
-image: https://cover.sli.dev
----
-
-# Code
-
-Use code snippets and get the highlighting directly, and even types hover!
-
-```ts {all|5|7|7-8|10|all} twoslash
-// TwoSlash enables TypeScript hover information
-// and errors in markdown code blocks
-// More at https://shiki.style/packages/twoslash
-
-import { computed, ref } from 'vue'
-
-const count = ref(0)
-const doubled = computed(() => count.value * 2)
-
-doubled.value = 2
+    style A fill:#4EC5D4
+    style C fill:#4EC5D4
+    style F fill:#4EC5D4
+    style G fill:#2B90B6
 ```
 
-<arrow v-click="[4, 5]" x1="350" y1="310" x2="195" y2="334" color="#953" width="2" arrowSize="1" />
+</div>
 
-<!-- This is a comment -->
+<!--
+This cycle is the foundation of effective AI-assisted development
+-->
+
+---
+
+# First Prompt: Lay the Groundwork
+
+**Goal**: Set up the environment without doing too much at once
+
+<v-clicks>
+
+## What to do
+
+- **Keep it simple**: Don't ask the agent to do too much initially
+- **Set up structure**: Create files, directories, routes, empty components
+- **Establish context**: Define where the agent should be working
+
+## Why this matters
+
+Asking the agent to do too much in the first step causes it to get off track quickly.
+
+If you're not sure exactly how to solve the problem, ideate in a separate conversation first.
+
+</v-clicks>
+
+<!--
+Think of this as scaffolding - you're building the frame before adding the details
+-->
+
+---
+
+# After the First Prompt
+
+<v-clicks>
+
+## Critical checkpoints
+
+**1. Review the code in detail**
+- Read through everything generated
+- Make sure you understand what was created
+- Check for any obvious issues or deviations
+
+**2. Make sure the app compiles**
+- Run the build/dev server
+- Fix any immediate compilation errors
+- Verify the structure is sound
+
+</v-clicks>
+
+<v-click>
+
+<div class="mt-8 p-4 bg-yellow-100 dark:bg-yellow-900 rounded">
+
+⚠️ Never proceed to the next step if the code doesn't compile or you don't understand what was generated
+
+</div>
+
+</v-click>
+
+<!--
+This is your first quality gate - don't skip it
+-->
+
+---
+
+# Second Prompt: Describe the Solution
+
+**Goal**: Provide detailed requirements and guide the implementation
+
+<v-clicks>
+
+## 1. Describe the problem in detail
+
+Explain what you're solving, then describe the solution you want to see:
+- Component inputs and outputs
+- What services should do
+- Expected behavior and output
+
+## 2. Share guiding information
+
+**Point to existing files with patterns you want to follow**
+- Use file paths to reference working code
+- Modern agents can parse and learn from existing patterns
+- Providing working code is the best way to guide output
+
+</v-clicks>
+
+<!--
+This is where you leverage context to get better results
+-->
+
+---
+
+# Second Prompt (continued)
+
+<v-clicks>
+
+## 3. Roll the dice
+
+Let the agent implement the solution based on your detailed description
+
+<div class="mt-8">
+
+### Example prompt structure
+
+```markdown
+I need to implement user authentication for the dashboard.
+
+The solution should:
+- Create an AuthService with login/logout methods
+- Add a LoginComponent with email/password fields
+- Store tokens in localStorage
+- Redirect to /dashboard on success
+
+Please follow the patterns in `src/services/api.service.ts`
+for service structure and error handling.
+```
+
+</div>
+
+</v-clicks>
+
+<!--
+Be specific about what you want and what patterns to follow
+-->
+
+---
+
+# After the Second Prompt
+
+<v-clicks>
+
+## 1. Review the code in detail
+
+Read through all generated code carefully
+- Does it match your requirements?
+- Are there any security issues?
+- Does it follow the patterns you referenced?
+
+## 2. Make sure it compiles
+
+Run the build again
+- Fix any new compilation errors
+- Test the functionality
+
+## 3. Suggest ways to refine
+
+Don't stop at working code - make it better
+- "Move this function to a service"
+- "Extract this logic into a utility function"
+- "Can we simplify this conditional?"
+
+**Repeat until the output is clean and easy to read**
+
+</v-clicks>
+
+<!--
+This is your second quality gate and the start of refinement
+-->
+
+---
+layout: two-cols
+---
+
+# Handling Errors
+
+<v-clicks>
+
+## The simple approach
+
+**Copy and paste console errors into the prompt**
+
+The agent can often resolve them directly
+
+## Include context
+
+- Line numbers from errors
+- Stack traces
+- Runtime vs compilation errors
+
+</v-clicks>
+
+::right::
+
+<v-click>
+
+<div class="mt-12">
+
+### Example
+
+```
+I'm getting this error:
+
+TypeError: Cannot read property 'map'
+of undefined
+    at UserList.tsx:42
+
+The users array should be populated
+from the API call but it's undefined.
+```
+
+<div class="mt-4 p-3 bg-green-100 dark:bg-green-900 rounded text-sm">
+
+✅ Most errors can be resolved by simply sharing the error message and context
+
+</div>
+
+</div>
+
+</v-click>
+
+<!--
+Error handling with AI is surprisingly effective when you provide good context
+-->
+
+---
+
+# Context Management
+
+<v-clicks>
+
+## More examples = better output
+
+**The more examples of good code in context, the better**
+- Reference existing files when possible
+- Point to patterns you want followed
+- Include working implementations as examples
+
+## But too much context can be bad
+
+**Keep your session focused**
+- One task per session
+- Start a new session when switching topics
+- Don't let context become cluttered with unrelated code
+
+</v-clicks>
+
+<v-click>
+
+<div class="mt-8 p-4 bg-blue-100 dark:bg-blue-900 rounded">
+
+💡 Think of context like RAM - more is better, but only if it's relevant to the current task
+
+</div>
+
+</v-click>
+
+<!--
+Balance is key - enough context to guide, not so much to confuse
+-->
+
+---
+
+# Refinement Strategies
+
+<v-clicks>
+
+## The DRY Problem
+
+**LLMs often write new content before reusing existing content**
+
+This leads to code duplication
+
+## How to address it
+
+- **Identify duplicate code**: Look for repeated patterns
+- **Ask for consolidation**: "Move this function to a shared service"
+- **Request utility methods**: "Extract this logic to a utility"
+- **Enforce patterns**: "This duplicates code in X, please reuse that instead"
+
+</v-clicks>
+
+<v-click>
+
+<div class="mt-6">
+
+### Example refinement prompt
+
+```markdown
+I notice the date formatting logic is duplicated in three places.
+Can you create a formatDate utility in src/utils/date.ts
+and replace all instances with calls to that function?
+```
+
+</div>
+
+</v-click>
+
+<!--
+Refinement is where good code becomes great code
+-->
 
 ---
 layout: center
 class: text-center
 ---
 
-# Learn More
+# Key Takeaways
 
-[Documentation](https://sli.dev) · [GitHub](https://github.com/slidevjs/slidev) · [Showcases](https://sli.dev/resources/showcases)
+<div class="text-left max-w-3xl mx-auto">
+
+<v-clicks>
+
+1. **Start simple** - Lay groundwork first, implement details second
+
+2. **Always review and compile** - After every step, verify the code
+
+3. **Be specific and provide examples** - Guide with detailed prompts and existing patterns
+
+4. **Manage context carefully** - Keep sessions focused, reference relevant files
+
+5. **Refine iteratively** - Don't accept the first solution, push for clean DRY code
+
+6. **Treat AI as a collaborator** - Review its work like you would a teammate's code
+
+</v-clicks>
+
+</div>
+
+<!--
+These practices will help you work effectively with AI agents from day one
+-->
+
+---
+layout: center
+class: text-center
+---
+
+# Questions?
+
+Start small, iterate often, and always review
+
+<div class="mt-8 opacity-60">
+
+Remember: AI agents are powerful tools, but you're still the engineer making the decisions
+
+</div>
