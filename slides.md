@@ -333,9 +333,9 @@ I'm getting this error:
 
 TypeError: Cannot read property 'map'
 of undefined
-    at user-list.component.ts:42
+    at device-list.component.ts:42
 
-The users array should be populated
+The devices array should be populated
 from the API call but it's undefined.
 ```
 
@@ -463,11 +463,11 @@ These practices will help you work effectively with AI agents from day one
 
 ---
 
-# Demo: Building a User Dashboard
+# Demo: Building Device & Equipment Pages
 
 <div class="text-lg">
 
-**Goal**: Create a user list page and detail page demonstrating the iterative workflow
+**Goal**: Create a device list page and equipment list page demonstrating the iterative workflow
 
 </div>
 
@@ -475,20 +475,20 @@ These practices will help you work effectively with AI agents from day one
 
 ### First Prompt: Lay the Groundwork
 ```markdown
-Set up routing for /users and /users/:id
-Create empty UserList and UserDetail components
+Set up routing for /devices and /equipment
+Create empty DeviceListComponent and EquipmentListComponent
 Add the routes to the app router
 ```
 
 ### Second Prompt: Implement Features
 ```markdown
-Implement UserListComponent to fetch and display users in a table
+Implement DeviceListComponent to fetch and display devices in a table
 - Follow the pattern in src/app/components/product-list/product-list.component.ts
 - Use the ApiService pattern from src/app/services/api.service.ts
 
-UserDetailComponent should show full user info and edit form
-- Include validation on the form with FormBuilder
-- Save button should call PUT /api/users/:id
+EquipmentListComponent should show equipment with status badges
+- Include filtering by status (active, inactive, maintenance)
+- Each row should link to /equipment/:id for details
 ```
 
 </v-clicks>
@@ -507,8 +507,8 @@ UserDetailComponent should show full user info and edit form
 
 **3. Refine for DRY**
 ```markdown
-I see date formatting is duplicated in UserListComponent and UserDetailComponent.
-Move this to src/app/utils/date.util.ts and import it in both components.
+I see status badge rendering is duplicated in DeviceListComponent and EquipmentListComponent.
+Move this to src/app/components/status-badge/status-badge.component.ts and reuse it.
 ```
 
 **4. Iterate** - Simplify logic, improve naming, extract utilities
