@@ -178,6 +178,8 @@ This is your first quality gate - don't skip it
 -->
 
 ---
+layout: two-cols
+---
 
 # Second Prompt: Describe the Solution
 
@@ -192,12 +194,22 @@ Explain what you're solving, then describe the solution you want to see:
 - What services should do
 - Expected behavior and output
 
+</v-clicks>
+
+::right::
+
+<v-clicks>
+
+<div class="mt-12">
+
 ## 2. Share guiding information
 
 **Point to existing files with patterns you want to follow**
 - Use file paths to reference working code
 - Modern agents can parse and learn from existing patterns
 - Providing working code is the best way to guide output
+
+</div>
 
 </v-clicks>
 
