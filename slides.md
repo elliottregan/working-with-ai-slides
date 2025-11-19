@@ -8,7 +8,7 @@ info: |
 class: text-center
 drawings:
   persist: false
-transition: slide-left
+transition: none
 mdc: true
 ---
 
