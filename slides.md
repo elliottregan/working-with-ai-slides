@@ -253,6 +253,8 @@ Be specific about what you want and what patterns to follow
 -->
 
 ---
+layout: two-cols
+---
 
 # After the Second Prompt
 
@@ -271,6 +273,14 @@ Run the build again
 - Fix any new compilation errors
 - Test the functionality
 
+</v-clicks>
+
+::right::
+
+<v-clicks>
+
+<div class="mt-12">
+
 ## 3. Suggest ways to refine
 
 Don't stop at working code - make it better
@@ -279,6 +289,8 @@ Don't stop at working code - make it better
 - "Can we simplify this conditional?"
 
 **Repeat until the output is clean and easy to read**
+
+</div>
 
 </v-clicks>
 
