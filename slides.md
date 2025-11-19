@@ -462,6 +462,67 @@ These practices will help you work effectively with AI agents from day one
 -->
 
 ---
+
+# Demo: Building a User Dashboard
+
+<div class="text-lg">
+
+**Goal**: Create a user list page and detail page demonstrating the iterative workflow
+
+</div>
+
+<v-clicks>
+
+### First Prompt: Lay the Groundwork
+```markdown
+Set up routing for /users and /users/:id
+Create empty UserList and UserDetail components
+Add the routes to the app router
+```
+
+### Second Prompt: Implement Features
+```markdown
+Implement UserList to fetch and display users in a table
+- Follow the pattern in src/components/ProductList.tsx for styling
+- Use the ApiService pattern from src/services/api.service.ts
+
+UserDetail should show full user info and edit form
+- Include validation on the form
+- Save button should call PUT /api/users/:id
+```
+
+</v-clicks>
+
+---
+
+# Demo: Review & Refine
+
+<v-clicks>
+
+### After implementation, review and refine:
+
+**1. Review output** - Check if patterns were followed, test compilation
+
+**2. Handle errors** - Copy/paste any console errors back to the agent
+
+**3. Refine for DRY**
+```markdown
+I see date formatting is duplicated in UserList and UserDetail.
+Move this to src/utils/date.ts and import it in both components.
+```
+
+**4. Iterate** - Simplify logic, improve naming, extract utilities
+
+### Result
+Two clean, well-structured pages following existing patterns, with proper error handling and DRY code.
+
+</v-clicks>
+
+<!--
+This demo shows the complete workflow in action
+-->
+
+---
 layout: center
 class: text-center
 ---
