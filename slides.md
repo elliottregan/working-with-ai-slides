@@ -302,6 +302,8 @@ Error handling with AI is surprisingly effective when you provide good context
 -->
 
 ---
+layout: two-cols
+---
 
 # Context Management
 
@@ -311,6 +313,10 @@ Error handling with AI is surprisingly effective when you provide good context
 - Reference existing files when possible
 - Point to patterns you want followed
 - Include working implementations as examples
+
+::right::
+
+<div class="mt-12">
 
 ## But too much context can be bad
 
@@ -322,6 +328,8 @@ Error handling with AI is surprisingly effective when you provide good context
 <div class="mt-8 p-4 bg-blue-100 dark:bg-blue-900 rounded">
 
 💡 Think of context like RAM - more is better, but only if it's relevant to the current task
+
+</div>
 
 </div>
 
