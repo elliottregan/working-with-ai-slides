@@ -236,11 +236,11 @@ I need to implement user authentication for the dashboard.
 
 The solution should:
 - Create an AuthService with login/logout methods
-- Add a LoginComponent with email/password fields
+- Add a LoginComponent with email/password fields using FormBuilder
 - Store tokens in localStorage
-- Redirect to /dashboard on success
+- Redirect to /dashboard on success using Router
 
-Please follow the patterns in `src/services/api.service.ts`
+Please follow the patterns in `src/app/services/api.service.ts`
 for service structure and error handling.
 ```
 
@@ -333,7 +333,7 @@ I'm getting this error:
 
 TypeError: Cannot read property 'map'
 of undefined
-    at UserList.tsx:42
+    at user-list.component.ts:42
 
 The users array should be populated
 from the API call but it's undefined.
@@ -418,7 +418,7 @@ This leads to code duplication
 
 ```markdown
 I notice the date formatting logic is duplicated in three places.
-Can you create a formatDate utility in src/utils/date.ts
+Can you create a formatDate utility in src/app/utils/date.util.ts
 and replace all instances with calls to that function?
 ```
 
@@ -482,12 +482,12 @@ Add the routes to the app router
 
 ### Second Prompt: Implement Features
 ```markdown
-Implement UserList to fetch and display users in a table
-- Follow the pattern in src/components/ProductList.tsx for styling
-- Use the ApiService pattern from src/services/api.service.ts
+Implement UserListComponent to fetch and display users in a table
+- Follow the pattern in src/app/components/product-list/product-list.component.ts
+- Use the ApiService pattern from src/app/services/api.service.ts
 
-UserDetail should show full user info and edit form
-- Include validation on the form
+UserDetailComponent should show full user info and edit form
+- Include validation on the form with FormBuilder
 - Save button should call PUT /api/users/:id
 ```
 
@@ -507,8 +507,8 @@ UserDetail should show full user info and edit form
 
 **3. Refine for DRY**
 ```markdown
-I see date formatting is duplicated in UserList and UserDetail.
-Move this to src/utils/date.ts and import it in both components.
+I see date formatting is duplicated in UserListComponent and UserDetailComponent.
+Move this to src/app/utils/date.util.ts and import it in both components.
 ```
 
 **4. Iterate** - Simplify logic, improve naming, extract utilities
