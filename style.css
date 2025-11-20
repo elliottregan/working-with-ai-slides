@@ -1,0 +1,10 @@
+/* Custom styles for Slidev presentation */
+
+/* Increase spacing between columns in two-column layout */
+.slidev-layout.two-cols {
+  gap: 1rem;
+}
+
+.slidev-layout.two-cols .grid {
+  gap: 1rem;
+}

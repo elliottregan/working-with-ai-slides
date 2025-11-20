@@ -22,7 +22,7 @@ layout: center
 
 # Executive Summary
 
-- **Treat AI like a talented intern**: Knowledgeable about patterns, but needs guidance and review
+- **Treat AI like a talented intern**: Knowledgeable about patterns, but needs guidance
 
 - **Start simple, iterate deliberately**: Break work into small steps, review after each change
 
@@ -31,6 +31,8 @@ layout: center
 - **Manage context strategically**: More examples = better output, but stay focused on one task
 
 - **Leverage existing patterns**: Point to working code to guide the AI in the right direction
+
+- **Leverage existing patterns**: Create rules (aka "skills") for Q and other tools to include in context
 
 <!--
 These five principles will guide your entire workflow with AI agents
@@ -81,8 +83,6 @@ layout: center
 
 # The Iterative Process
 
-<div class="text-sm">
-
 ```mermaid
 graph LR
     A[First Prompt:<br/>Lay Groundwork] --> B[Review Code +<br/>Ensure Compilation]
@@ -98,8 +98,6 @@ graph LR
     style F fill:#4EC5D4
     style G fill:#2B90B6
 ```
-
-</div>
 
 <!--
 This cycle is the foundation of effective AI-assisted development
@@ -119,7 +117,7 @@ This cycle is the foundation of effective AI-assisted development
 
 ## Why this matters
 
-Asking the agent to do too much in the first step causes it to get off track quickly.
+Asking the agent to do too much in the first step causes it to get off track quickly. The agent may not understand the full context of the problem or may generate code that doesn't fit the project's needs.
 
 If you're not sure exactly how to solve the problem, ideate in a separate conversation first.
 
@@ -128,6 +126,52 @@ Think of this as scaffolding - you're building the frame before adding the detai
 -->
 
 ---
+layout: two-cols
+---
+
+# First Prompt Examples
+
+### Example 1: Adding a New Feature
+```markdown
+I need to add user profile functionality
+to the app.
+
+For now, please:
+- Create a new route /profile in the router.ts
+- Create an empty ProfileComponent
+- Add a link to the profile page in 
+  navigation-tabs.component.ts
+```
+
+::right::
+
+<div class="mt-12">
+
+### Example 2: Setting Up a New Service
+```markdown
+I want to add analytics tracking
+to the application.
+
+First step:
+- Create src/app/services/
+  analytics.service.ts with an
+  empty service class
+- Create src/app/models/
+  analytics-event.model.ts
+  with a basic interface
+- Add the service to the
+  app providers
+```
+
+</div>
+
+<!--
+Notice how both examples are focused on structure, not implementation details
+-->
+
+---
+layout: two-cols
+---
 
 # After the First Prompt
 
@@ -135,17 +179,21 @@ Think of this as scaffolding - you're building the frame before adding the detai
 
 **1. Review the code in detail**
 - Read through everything generated
-- Make sure you understand what was created
+- Make sure you understand what every line does
 - Check for any obvious issues or deviations
+- Sometimes ask the agent to explain its reasoning, either in comments or in the same conversation
 
 **2. Make sure the app compiles**
 - Run the build/dev server
 - Fix any immediate compilation errors
 - Verify the structure is sound
 
+::right::
+
+
 <div class="mt-8 p-4 bg-yellow-100 dark:bg-yellow-900 rounded">
 
-⚠️ Never proceed to the next step if the code doesn't compile or you don't understand what was generated
+⚠️ Never proceed to the next step if you don't understand what was generated
 
 </div>
 
@@ -189,9 +237,9 @@ This is where you leverage context to get better results
 
 # Second Prompt (continued)
 
-## 3. Roll the dice
+## 3. Hand Off to the Agent
 
-Let the agent implement the solution based on your detailed description
+Let the agent implement the solution based on your detailed description. The initial prompt has provided the groundwork and primed the agent with the necessary structure to get started.
 
 <div class="mt-8">
 
@@ -201,12 +249,13 @@ Let the agent implement the solution based on your detailed description
 I need to implement user authentication for the dashboard.
 
 The solution should:
-- Create an AuthService with login/logout methods
-- Add a LoginComponent with email/password fields using FormBuilder
-- Store tokens in localStorage
+- Create an EquipmentService with get/update methods
+- Add an EditEquipmentComponent with ssid/password fields using FormBuilder
+- Add simple validators for non-empty fields using Angular Validators
+- Display error alert on submit if validation fails
 - Redirect to /dashboard on success using Router
 
-Please follow the patterns in `src/app/services/api.service.ts`
+Please follow the patterns in `src/app/devices/devices.service.ts`
 for service structure and error handling.
 ```
 
@@ -248,6 +297,10 @@ Don't stop at working code - make it better
 
 **Repeat until the output is clean and easy to read**
 
+</div>
+
+<div class="mt-8 text-center">
+<img src="/y-u-no-work.png" class="inline-block" style="max-height: 200px;" />
 </div>
 
 <!--
@@ -307,6 +360,8 @@ layout: two-cols
 
 # Context Management
 
+<div class="">
+
 ## More examples = better output
 
 **The more examples of good code in context, the better**
@@ -314,9 +369,11 @@ layout: two-cols
 - Point to patterns you want followed
 - Include working implementations as examples
 
+</div>
+
 ::right::
 
-<div class="mt-12">
+<div class="mt-12 pl-8">
 
 ## But too much context can be bad
 
@@ -327,7 +384,7 @@ layout: two-cols
 
 <div class="mt-8 p-4 bg-blue-100 dark:bg-blue-900 rounded">
 
-💡 Think of context like RAM - more is better, but only if it's relevant to the current task
+💡 Think of context like a research library - having the right books on your desk helps, but too many unrelated books just clutter your workspace
 
 </div>
 
@@ -398,62 +455,6 @@ These practices will help you work effectively with AI agents from day one
 -->
 
 ---
-
-# Demo: Building Device & Equipment Pages
-
-<div class="text-lg">
-
-**Goal**: Create a device list page and equipment list page demonstrating the iterative workflow
-
-</div>
-
-### First Prompt: Lay the Groundwork
-```markdown
-Set up routing for /devices and /equipment
-Create empty DeviceListComponent and EquipmentListComponent
-Add the routes to the app router
-```
-
-### Second Prompt: Implement Features
-```markdown
-Implement DeviceListComponent to fetch and display devices in a table
-- Follow the pattern in src/app/components/product-list/product-list.component.ts
-- Use the ApiService pattern from src/app/services/api.service.ts
-
-EquipmentListComponent should show equipment with status badges
-- Include filtering by status (active, inactive, maintenance)
-- Each row should link to /equipment/:id for details
-```
-
----
-
-# Demo: Review & Refine
-
-### After implementation, review and refine:
-
-**1. Review output** - Check if patterns were followed, test compilation
-
-**2. Handle errors** - Copy/paste any console errors back to the agent
-
-**3. Refine for DRY**
-```markdown
-I see status badge rendering is duplicated in DeviceListComponent and EquipmentListComponent.
-Move this to src/app/components/status-badge/status-badge.component.ts and reuse it.
-
-These two pages share a common layout. Create a shared layout component
-at src/app/layouts/list-page-layout/list-page-layout.component.ts and reuse it.
-```
-
-**4. Iterate** - Simplify logic, improve naming, extract utilities
-
-### Result
-Two clean, well-structured pages following existing patterns, with proper error handling and DRY code.
-
-<!--
-This demo shows the complete workflow in action
--->
-
----
 layout: center
 class: text-center
 ---
@@ -467,3 +468,5 @@ Start small, iterate often, and always review
 Remember: AI agents are powerful tools, but you're still the engineer making the decisions
 
 </div>
+
+Elliott Regan
